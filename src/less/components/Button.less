@@ -1,0 +1,50 @@
+.Button {
+	position: relative;
+	border-radius: 0.25em;
+	box-shadow: 0 0.25em 0.25em 0 rgba(0, 0, 0, 0.25);
+	display: flex;
+	padding: 2em 4em;
+	align-items: flex-start;
+	gap: 0.625em;
+	cursor: pointer;
+
+	&.contained {
+		background: var(--gradient-2, linear-gradient(95deg, #FE9A52 0.04%, #FF5748 100.04%));
+	}
+
+	&.outlined {
+		background: none;
+		border: 1px solid var(--theme-warning, #FE9A52);
+
+		.Button__content {
+			.Button__text {
+				color: var(--theme-danger, #FD7D72);
+			}
+		}
+	}
+
+	.Button__content {
+		.Button__text {
+			color: var(--theme-white, #FFF);
+			font-family: 'Exo 2', sans-serif;
+			font-size: 1.5em;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 100%; /* 15px */
+			letter-spacing: 1.125px;
+			text-transform: uppercase;
+		}
+	}
+
+	&.useIcon {
+		padding-left: 6.5em;
+		.Button__content {
+			.Icon {
+				position: absolute;
+				left: 4em;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}

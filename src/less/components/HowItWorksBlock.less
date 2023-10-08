@@ -1,0 +1,49 @@
+.HowItWorksBlock {
+	display: flex;
+	justify-content: center;
+
+	.HowItWorksBlock__content {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		.HowItWorksBlock__title {
+			color: var(--gray-1100, #353738);
+			font-size: 4.5em;
+			font-weight: 700;
+		}
+
+		.HowItWorksBlock__cards {
+			display: flex;
+			justify-content: center;
+			margin-top: 8em;
+
+			.HowItWorksBlock__card {
+				max-width: 28.5em;
+
+				.icon {
+					width: 7em;
+					height: 7em;
+					border-radius: 17px;
+					background: linear-gradient(141deg, rgba(254, 154, 82, 0.10) 25.69%, rgba(255, 87, 72, 0.10) 143.86%);
+				}
+
+				.title {
+					color: var(--gray-1100, #353738);
+					font-weight: 700;
+					font-size: 2.2em;
+					margin-top: 2.2em;
+					margin-bottom: 1em;
+				}
+
+				.desc {
+					font-size: 1.8em;
+				}
+
+				&:not(:last-child) {
+					margin-right: 17em;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,57 @@
+.BubbleBlock {
+	width: 100%;
+	height: 35.3em;
+	background: linear-gradient(275deg, #FFECD7 9.5%, rgba(255, 236, 215, 0.00) 100.79%);
+	display: flex;
+	justify-content: center;
+	position: relative;
+
+	.BubbleBlock__content {
+		width: 114em;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+
+		.BubbleBlock__bubbles {
+			position: relative;
+			margin-right: 15.3em;
+
+			.BubbleBlock__bubble__image {
+				height: 55em;
+				width: 55em;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: 35% 100%;
+				background-image: url('../../img/StockedImageLaugh.jpg');
+				border-radius: 50%;
+			}
+
+			&:after {
+				content: '';
+				background-color: #FFA99C;
+				background-size: cover;
+				background-repeat: no-repeat;
+				border-radius: 50%;
+				width: 23.1em;
+				height: 23.1em;
+				position: absolute;
+				bottom: -6em;
+			}
+		}
+
+		.BubbleBlock__try {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+
+			.BubbleBlock__text {
+				color: var(--theme-primary-indigo, #5022E2);
+				font-size: 4em;
+				font-weight: 700;
+				max-width: 13.55em;
+				margin-bottom: 1em;
+			}
+		}
+	}
+}

@@ -1,0 +1,42 @@
+.Header {
+	height: 14.8em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	width: 100%;
+
+	.Header__content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 10.5em;
+	}
+
+	.Header__logo {
+		font-size: 1.5625em;
+		font-family: 'Exo', sans-serif;
+		font-weight: 900;
+		color: #6152FF;
+	}
+
+	.Header__button {
+		padding: 1.6em;
+	}
+
+	.Header__menu_items {
+		.Header__menu_item {
+			font-size: 1.8em;
+			border: none;
+			padding: 0;
+			background: none;
+			font-weight: 700;
+			color: #85888C;
+
+			&:not(:last-child) {
+				margin-right: 3.5em;
+			}
+		}
+	}
+}

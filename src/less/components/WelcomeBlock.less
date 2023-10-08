@@ -1,0 +1,56 @@
+.WelcomeBlock {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
+
+
+	.WelcomeBlock__content {
+		display: flex;
+		justify-content: center;
+		.WelcomeBlock__left_items {
+			max-width: 59.1em;
+			margin-right: 2em;
+
+			.WelcomeBlock__left_items__title {
+				h1 {
+				font-size: 5.4em;
+				color: var(--theme-primary-indigo, #5022E2);
+				font-weight: 700;
+				line-height: 120%;
+			}
+			}
+
+			.WelcomeBlock__left_items__descr {
+				margin-top: 1.23em;
+				color: var(--gray-1000, #4B4D4F);
+				text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+				font-family: "Montserrat", serif;
+				font-size: 1.83em;
+				width: 30.5em;
+			}
+
+			.WelcomeBlock__left_items__buttons {
+				display: flex;
+				margin-top: 5.8em;
+
+				.WelcomeBlock__left_items__button {
+					&:not(:last-child) {
+						margin-right: 1.6em;
+					}
+				}
+			}
+		}
+		.WelcomeBlock__right_items {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-bottom: 2em;
+
+			.WelcomeBlock__right_items__image {
+				width: 52.5em;
+				height: 30.5em;
+			}
+		}
+	}
+}

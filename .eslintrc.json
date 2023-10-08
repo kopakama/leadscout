@@ -1,0 +1,112 @@
+{
+	"extends": [
+		"eslint-config-airbnb",
+		"plugin:flowtype/recommended",
+		"plugin:react/recommended",
+		"plugin:prettier/recommended",
+		"prettier"
+	],
+	"parser": "@babel/eslint-parser",
+	"root": true,
+	"env": {
+		"browser": true,
+		"es6": true
+	},
+	"plugins": [
+		"flowtype",
+		"react",
+		"prettier"
+	],
+	"settings": {
+		"react": {
+			"createClass": "createReactClass", // Regex for Component Factory to use,
+			// default to "createReactClass"
+			"pragma": "React",  // Pragma to use, default to "React"
+			"fragment": "Fragment",  // Fragment to use (may be a property of <pragma>), default to "Fragment"
+			"version": "detect", // React version. "detect" automatically picks the version you have installed.
+			// You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+			// default to latest and warns if missing
+			// It will default to "detect" in the future
+			"flowVersion": "0.53" // Flow version
+		},
+		"componentWrapperFunctions": [
+			// The name of any function used to wrap components, e.g. Mobx `observer` function. If this isn't set, components wrapped by these functions will be skipped.
+			"observer", // `property`
+			{"property": "styled"}, // `object` is optional
+			{"property": "observer", "object": "Mobx"},
+			{"property": "observer", "object": "<pragma>"} // sets `object` to whatever value `settings.react.pragma` is set to
+		],
+		"linkComponents": [
+			// Components used as alternatives to <a> for linking, eg. <Link to={ url } />
+			"Hyperlink",
+			{"name": "Link", "linkAttribute": "to"}
+		]
+	},
+	"rules": {
+		"prettier/prettier": [
+			"error",
+			{
+				"endOfLine": "auto"
+			}
+		],
+		"useTabs": 0,
+		"no-new": 0,
+		"global-require": "off",
+		"linebreak-style": 0,
+		"no-continue": "off",
+		"no-prototype-builtins": "off",
+		"no-restricted-syntax": [
+			"error",
+			"LabeledStatement",
+			"WithStatement"
+		],
+		"prefer-destructuring": "off",
+		"import/no-cycle": "off",
+		"prefer-promise-reject-errors": "off",
+		"prefer-object-spread": "off",
+		"no-debugger": "off",
+		"no-plusplus": "off",
+		"spaced-comment": [
+			"error",
+			"always",
+			{
+				"exceptions": [
+					"-"
+				],
+				"markers": [
+					"/"
+				]
+			}
+		],
+		"class-methods-use-this": "off",
+		"no-underscore-dangle": [2, { "allowAfterThis": true, "allow": ["_id", "_type"] }],
+		"jsx-a11y/iframe-has-title": "off",
+		"jsx-a11y/mouse-events-have-key-events": "off",
+		"jsx-a11y/click-events-have-key-events": "off",
+		"no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": true }],
+
+		"react/jsx-filename-extension": [ 1, { "extensions": [".js", ".jsx"] } ],
+		"react/forbid-prop-types": [ "error", { "forbid": [] }],
+		"react/prop-types": ["error", { "ignore": ["children"] }],
+		"react/jsx-no-bind": "off",
+		"react/no-find-dom-node": "off",
+		"react/destructuring-assignment": "off",
+		"react/no-access-state-in-setstate": "off",
+		"react/static-property-placement": "off",
+		"react/jsx-props-no-spreading": "off",
+		"react/state-in-constructor": "off",
+		"react/jsx-fragments": "off",
+		"react/jsx-key": "off",
+
+		"import/prefer-default-export": "off",
+		"import/no-named-as-default": "off",
+
+		"jsx-a11y/img-has-alt": "off",
+		"jsx-a11y/no-static-element-interactions": "off",
+		"jsx-a11y/control-has-associated-label": "off",
+		"import/no-extraneous-dependencies": ["error", {"devDependencies": true}]
+	},
+	"globals": {
+
+	}
+}

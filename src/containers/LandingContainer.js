@@ -1,25 +1,36 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {withTranslation} from 'react-i18next';
-import '../less/index.less'
+import '../less/index.less';
+import classNames from 'classnames';
+import Header from '../components/Header';
+import WelcomeBlock from '../components/WelcomeBlock';
+import PhoneSliderBlock from '../components/PhoneSliderBlock';
+import BubbleBlock from '../components/BubbleBlock';
+import HowItWorksBlock from '../components/HowItWorksBlock';
 
-function LandingContainer({loading, requestExamples, classes, t, err, ...props}) {
-	useEffect(() => {
-		props.history.push('/');
-	}, [props.history]);
+function LandingContainer() {
+	function renderHeader() {
+		return <Header />;
+	}
 
-	const renderContentChildren = () => {
-		return [];
-	};
+	function renderBlock(elem, maxWidth = false) {
+		return <div className={classNames('Block', {maxWidth})}>{elem}</div>;
+	}
 
-	const renderContent = () => {
-		return (
-			<div>
-				{renderContentChildren()}
-			</div>
-		);
-	};
+	function renderContentChildren() {
+		return [renderBlock(<WelcomeBlock />), renderBlock(<PhoneSliderBlock />), renderBlock(<BubbleBlock />, true), renderBlock(<HowItWorksBlock />)];
+	}
 
-	return <div>{renderContent()}</div>;
+	function renderContent() {
+		return <div className="content">{renderContentChildren()}</div>;
+	}
+
+	return (
+		<div className="main">
+			{renderHeader()}
+			{renderContent()}
+		</div>
+	);
 }
 
 export default withTranslation()(LandingContainer);
