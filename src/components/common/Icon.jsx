@@ -15,11 +15,7 @@ export function Icon({...props}) {
 }
 
 Icon.propTypes = {
-	icon: PropTypes.string,
-};
-
-Icon.defaultProps = {
-	icon: '',
+	icon: PropTypes.string.isRequired,
 };
 
 export default Icon;
