@@ -1,31 +1,21 @@
 import React from 'react';
 import '../less/components/Header.less';
 import {withTranslation} from 'react-i18next';
-import Icon from './common/Icon';
-import BaseContainer from './common/BaseContainer';
+import BaseContainer from '../components/common/BaseContainer';
+import Card from '../components/Card';
 
 class HowItWorksContainer extends BaseContainer {
 	static defaultProps = {
 		baseClassName: 'HowItWorksContainer',
 	};
 
-	renderCard(icon, title, desc) {
-		return (
-			<div className={`${this.getBaseClassName()}__card`}>
-				<Icon icon="icon" />
-				<div className="title">{title}</div>
-				<div className="desc">{desc}</div>
-			</div>
-		);
-	}
-
 	getCards() {
 		const {t} = this.props;
 
 		return [
-			this.renderCard('icon', t('addChats'), t('addChatsDesc')),
-			this.renderCard('icon', t('addKeywords'), t('addKeywordsDesc')),
-			this.renderCard('icon', t('getHotLeads'), t('getHotLeadsDesc')),
+			<Card icon="icon" title={t('addChats')} desc={t('addChatsDesc')} />,
+			<Card icon="icon" title={t('addKeywords')} desc={t('addKeywordsDesc')} />,
+			<Card icon="icon" title={t('getHotLeads')} desc={t('getHotLeadsDesc')} />,
 		];
 	}
 

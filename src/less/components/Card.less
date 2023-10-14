@@ -1,0 +1,29 @@
+.Card {
+	max-width: 28.5em;
+	box-shadow: 0 41px 74px 0 #FFECD6, 0 4px 15px 0 rgba(255, 230, 200, 0.66);
+	padding: 2em;
+	border-radius: 1em;
+
+	.Icon {
+		width: 7em;
+		height: 7em;
+		border-radius: 17px;
+		background: linear-gradient(141deg, rgba(254, 154, 82, 0.10) 25.69%, rgba(255, 87, 72, 0.10) 143.86%);
+	}
+
+	&__title {
+		color: var(--gray-1100, #353738);
+		font-weight: 700;
+		font-size: 2.2em;
+		margin-top: 2.2em;
+		margin-bottom: 1em;
+	}
+
+	&__desc {
+		font-size: 1.8em;
+	}
+
+	&:not(:last-child) {
+		margin-right: 8.3em;
+	}
+}

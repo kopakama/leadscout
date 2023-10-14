@@ -2,48 +2,21 @@
 	display: flex;
 	justify-content: center;
 
-	.HowItWorksContainer__content {
+	&__content {
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+	}
 
-		.HowItWorksContainer__title {
-			color: var(--gray-1100, #353738);
-			font-size: 4.5em;
-			font-weight: 700;
-		}
+	&__title {
+		color: var(--gray-1100, #353738);
+		font-size: 4.5em;
+		font-weight: 700;
+	}
 
-		.HowItWorksContainer__cards {
-			display: flex;
-			justify-content: center;
-			margin-top: 8em;
-
-			.HowItWorksContainer__card {
-				max-width: 28.5em;
-
-				.Icon {
-					width: 7em;
-					height: 7em;
-					border-radius: 17px;
-					background: linear-gradient(141deg, rgba(254, 154, 82, 0.10) 25.69%, rgba(255, 87, 72, 0.10) 143.86%);
-				}
-
-				.title {
-					color: var(--gray-1100, #353738);
-					font-weight: 700;
-					font-size: 2.2em;
-					margin-top: 2.2em;
-					margin-bottom: 1em;
-				}
-
-				.desc {
-					font-size: 1.8em;
-				}
-
-				&:not(:last-child) {
-					margin-right: 17em;
-				}
-			}
-		}
+	&__cards {
+		display: flex;
+		justify-content: center;
+		margin-top: 8em;
 	}
 }

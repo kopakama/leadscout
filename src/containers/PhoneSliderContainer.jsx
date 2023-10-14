@@ -1,7 +1,7 @@
 import React from 'react';
 import '../less/components/Header.less';
 import {withTranslation} from 'react-i18next';
-import BaseContainer from './common/BaseContainer';
+import BaseContainer from '../components/common/BaseContainer';
 
 class PhoneSliderContainer extends BaseContainer {
 	static defaultProps = {

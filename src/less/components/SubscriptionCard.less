@@ -1,0 +1,84 @@
+.SubscriptionCard {
+	border-radius: 1em;
+	padding: 2em;
+	border: 2px solid rgba(0, 0, 0, 0.06);
+
+	&:nth-child(2) {
+		box-shadow: 0 41px 74px 0 #FFECD6, 0 4px 15px 0 rgba(255, 230, 200, 0.66);
+	}
+
+	&__top_block {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		padding-bottom: 2em;
+	}
+
+	&__bottom_block {
+		padding-top: 2em;
+	}
+
+	&__title {
+		color: var(--gray-1100, #353738);
+		font-weight: 700;
+		font-size: 2.2em;
+		margin-bottom: 0.5em;
+	}
+
+	&__desc {
+		font-size: 1.8em;
+	}
+
+	&__cost {
+		width: 100%;
+		display: flex;
+		align-items: flex-end;
+		margin-top: 1.2em;
+
+		&_price {
+			font-weight: 700;
+			font-size: 2.5em;
+			margin-right: 0.35em;
+			line-height: normal;
+		}
+
+		&_desc {
+			font-size: 1.4em;
+		}
+	}
+
+	&__bonuses {
+		margin-bottom: 2em;
+	}
+
+	&__bonus {
+		padding-left: 4em;
+		font-size: 1.2em;
+		margin-bottom: 1em;
+		position: relative;
+
+		&:before {
+			content: '';
+			background-color: #ffe4d9;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: 100% 100%;
+			border-radius: 50%;
+			width: 1.5em;
+			height: 1.5em;
+			position: absolute;
+			left: 1em;
+		}
+
+		&:after {
+			content: '';
+			background-image: url("../../img/icons/check.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: 100% 100%;
+			position: absolute;
+			left: 14px;
+			top: 2px;
+			width: 14px;
+			height: 14px;
+		}
+	}
+}

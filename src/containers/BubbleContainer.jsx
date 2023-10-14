@@ -1,8 +1,8 @@
 import React from 'react';
 import '../less/components/Header.less';
 import {withTranslation} from 'react-i18next';
-import Button from './common/Button';
-import BaseContainer from './common/BaseContainer';
+import Button from '../components/common/Button';
+import BaseContainer from '../components/common/BaseContainer';
 
 class BubbleContainer extends BaseContainer {
 	static defaultProps = {
