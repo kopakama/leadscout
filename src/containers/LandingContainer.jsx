@@ -9,6 +9,9 @@ import BubbleContainer from './BubbleContainer';
 import HowItWorksContainer from './HowItWorksContainer';
 import PresentationContainer from './PresentationContainer';
 import SubscriptionsContainer from './SubscriptionsContainer';
+import FaqContainer from './FaqContainer';
+import ContactBubbleContainer from './ContactBubbleContainer';
+import FooterContainer from './FooterContainer';
 
 class LandingContainer extends React.Component {
 	renderHeader() {
@@ -27,6 +30,9 @@ class LandingContainer extends React.Component {
 			this.renderBlock(<HowItWorksContainer />),
 			this.renderBlock(<PresentationContainer />, true),
 			this.renderBlock(<SubscriptionsContainer />),
+			this.renderBlock(<FaqContainer />),
+			this.renderBlock(<ContactBubbleContainer />, true),
+			this.renderBlock(<FooterContainer />),
 		];
 	}
 

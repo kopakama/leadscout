@@ -16,6 +16,7 @@
 html {
 	height: 101%;
 	font-size: 16px;
+	scroll-behavior: smooth;
 }
 
 /* always display scrollbars */
@@ -31,6 +32,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 ol, ul {
 	list-style: none;
+	padding-left: 25px;
+	position: relative;
+
+	li {
+		position: relative;
+
+		&:before {
+			content: '';
+			background-size: contain;
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			left: -26px;
+			top: 6px;
+			background: url("../img/icons/play.svg") no-repeat 100% 100%;
+		}
+	}
 }
 
 blockquote, q {

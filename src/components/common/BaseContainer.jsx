@@ -24,7 +24,11 @@ class BaseContainer extends React.Component {
 	}
 
 	render() {
-		return <div className={this.getBaseClassName()}>{this.renderContent()}</div>;
+		return (
+			<div id={this.getBaseClassName()} className={this.getBaseClassName()}>
+				{this.renderContent()}
+			</div>
+		);
 	}
 }
 

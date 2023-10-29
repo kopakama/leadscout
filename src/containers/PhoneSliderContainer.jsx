@@ -41,7 +41,7 @@ class PhoneSliderContainer extends BaseContainer {
 
 	renderPhoneSwiper() {
 		return (
-			<swiper-container class={`${this.getBaseClassName()}__swiper`} slides-per-view="1" speed="500" loop="true" autoplay="true">
+			<swiper-container class={`${this.getBaseClassName()}__swiper`} slides-per-view="1" speed="500" loop="true" autoplay="true" navigation="true">
 				{this.renderSliderItems()}
 			</swiper-container>
 		);

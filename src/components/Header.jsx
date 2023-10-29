@@ -11,10 +11,7 @@ function Header() {
 	}
 
 	function getMenuItems() {
-		return [
-			{text: t('ourCases'), elementId: 'products'},
-			{text: t('team'), elementId: 'useCases'},
-		];
+		return [{text: t('contacts'), elementId: 'ContactBubbleContainer'}];
 	}
 
 	function renderMenuItem(text, elementId) {
@@ -23,8 +20,8 @@ function Header() {
 				type="button"
 				className={`${getBaseClassName()}__menu_item`}
 				onClick={(e) => {
-					const elem = document.getElementById(elementId);
 					e.preventDefault(); // Stop Page Reloading
+					const elem = document.getElementById(elementId);
 					elem.scrollIntoView();
 				}}
 			>
