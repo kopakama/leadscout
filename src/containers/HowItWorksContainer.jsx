@@ -13,9 +13,9 @@ class HowItWorksContainer extends BaseContainer {
 		const {t} = this.props;
 
 		return [
-			<Card icon="icon" title={t('addChats')} desc={t('addChatsDesc')} />,
-			<Card icon="icon" title={t('addKeywords')} desc={t('addKeywordsDesc')} />,
-			<Card icon="icon" title={t('getHotLeads')} desc={t('getHotLeadsDesc')} />,
+			<Card icon="chat" title={t('addChats')} desc={t('addChatsDesc')} />,
+			<Card icon="key" title={t('addKeywords')} desc={t('addKeywordsDesc')} />,
+			<Card icon="handshake" title={t('getHotLeads')} desc={t('getHotLeadsDesc')} />,
 		];
 	}
 

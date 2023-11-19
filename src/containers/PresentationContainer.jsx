@@ -20,18 +20,28 @@ class PresentationContainer extends BaseContainer {
 		);
 	}
 
-	getCards() {
+	getCardsTopGroup() {
 		const {t} = this.props;
 
 		return [
-			<Card icon="icon" title={t('addChats')} desc={t('addChatsDesc')} />,
-			<Card icon="icon" title={t('addKeywords')} desc={t('addKeywordsDesc')} />,
-			<Card icon="icon" title={t('getHotLeads')} desc={t('getHotLeadsDesc')} />,
+			<Card icon="category" title={t('chatCategories')} desc={t('chatCategoriesDesc')} />,
+			<Card icon="support" title={t('247Support')} desc={t('247SupportDesc')} />,
+			<Card icon="lightning" title={t('fastSetup')} desc={t('fastSetupDesc')} />,
 		];
 	}
 
-	renderCards() {
-		return <div className={`${this.getBaseClassName()}__cards`}>{this.getCards()}</div>;
+	getCardsBottomGroup() {
+		const {t} = this.props;
+
+		return [<Card icon="category-2" title={t('keyChatCategories')} desc={t('keyChatCategoriesDesc')} />, <Card icon="table-file" title={t('fileUpload')} desc={t('fileUploadDesc')} />];
+	}
+
+	renderCardsTopGroup() {
+		return <div className={`${this.getBaseClassName()}__cards`}>{this.getCardsTopGroup()}</div>;
+	}
+
+	renderCardsBottomGroup() {
+		return <div className={`${this.getBaseClassName()}__cards`}>{this.getCardsBottomGroup()}</div>;
 	}
 
 	renderVideo() {
@@ -49,7 +59,7 @@ class PresentationContainer extends BaseContainer {
 	}
 
 	renderContentChildren() {
-		return [this.renderVideo(), this.renderCards()];
+		return [this.renderVideo(), this.renderCardsTopGroup(), this.renderCardsBottomGroup()];
 	}
 }
 
