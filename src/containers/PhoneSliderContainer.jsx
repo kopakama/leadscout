@@ -1,6 +1,7 @@
 import React from 'react';
 import '../less/components/Header.less';
 import {withTranslation} from 'react-i18next';
+import classNames from 'classnames';
 import BaseContainer from '../components/common/BaseContainer';
 
 class PhoneSliderContainer extends BaseContainer {
@@ -16,15 +17,17 @@ class PhoneSliderContainer extends BaseContainer {
 		return 3;
 	}
 
-	renderSwiperSlide({title, text}) {
+	renderSwiperSlide(index) {
+		const {t} = this.props;
+
 		return (
 			<swiper-slide class={`${this.getBaseClassName()}__swiper_slide`}>
 				<div className={`${this.getBaseClassName()}__swiper_slide__phone`}>
-					<div className={`${this.getBaseClassName()}__swiper_slide__phone_image`} />
+					<div className={classNames(`${this.getBaseClassName()}__swiper_slide__phone_image`, `image_${index}`)} />
 				</div>
 				<div className={`${this.getBaseClassName()}__swiper_slide__text`}>
-					<div className={`${this.getBaseClassName()}__swiper_slide__title`}>{title}</div>
-					<div className={`${this.getBaseClassName()}__swiper_slide__desc`}>{text}</div>
+					<div className={`${this.getBaseClassName()}__swiper_slide__title`}>{t(`phoneSliderItemTitle${index}`)}</div>
+					<div className={`${this.getBaseClassName()}__swiper_slide__desc`}>{t(`phoneSliderItemText${index}`)}</div>
 				</div>
 			</swiper-slide>
 		);
@@ -32,9 +35,8 @@ class PhoneSliderContainer extends BaseContainer {
 
 	renderSliderItems() {
 		const result = [];
-		const {t} = this.props;
 		for (let i = 1; i <= this.getSliderItemsCount(); i++) {
-			result.push(this.renderSwiperSlide({title: t(`phoneSliderItemTitle${i}`), text: t(`phoneSliderItemText${i}`)}));
+			result.push(this.renderSwiperSlide(i));
 		}
 		return result;
 	}
