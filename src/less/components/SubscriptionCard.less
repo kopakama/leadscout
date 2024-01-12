@@ -82,3 +82,31 @@
 		}
 	}
 }
+
+.desktop {
+	.SubscriptionCard {
+		max-width: 28.5em;
+
+		&:not(:first-child) {
+			margin-left: 8.3em;
+		}
+	}
+}
+
+.phone {
+	.SubscriptionCard {
+		width: 38em;
+		font-size: 1.3em;
+
+		&:not(:first-child) {
+			margin-top: 5em;
+		}
+
+		&__bonus {
+			&:after {
+				top: 0;
+				left: 12px;
+			}
+		}
+	}
+}

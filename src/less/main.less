@@ -102,3 +102,25 @@ a:hover {
 		margin-bottom: 10em;
 	}
 }
+
+.app.phone {
+	overflow: hidden;
+	font-size: 0.65em;
+	.content {
+		padding-top: 12em;
+	}
+
+	.Block {
+		&:not(.maxWidth) {
+			width: 100%;
+
+			.Block__content {
+				padding: 0 2em;
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 5em;
+		}
+	}
+}

@@ -1,5 +1,4 @@
 .Card {
-	max-width: 28.5em;
 	box-shadow: 0 41px 74px 0 #FFECD6, 0 4px 15px 0 rgba(255, 230, 200, 0.66);
 	padding: 2em;
 	border-radius: 1em;
@@ -23,8 +22,25 @@
 	&__desc {
 		font-size: 1.8em;
 	}
+}
 
-	&:not(:first-child) {
-		margin-left: 8.3em;
+.desktop {
+	.Card {
+		max-width: 28.5em;
+
+		&:not(:first-child) {
+			margin-left: 8.3em;
+		}
+	}
+}
+
+.phone {
+	.Card {
+		width: 38em;
+		font-size: 1.3em;
+
+		&:not(:first-child) {
+			margin-top: 5em;
+		}
 	}
 }

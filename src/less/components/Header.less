@@ -1,5 +1,5 @@
 .Header {
-	height: 14.8em;
+	height: 7em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -17,7 +17,7 @@
 	}
 
 	&__logo {
-		font-size: 1.5625em;
+		font-size: 3em;
 		font-family: 'Exo', sans-serif;
 		font-weight: 900;
 		color: #6152FF;
@@ -42,6 +42,12 @@
 			background: none;
 			font-weight: 700;
 			color: #85888C;
+			cursor: pointer;
+			transition: color 0.5s linear;
+
+			&:hover {
+				color: #000;
+			}
 
 			&:not(:last-child) {
 				margin-right: 2em;
@@ -129,7 +135,7 @@
 	}
 }
 
-@media (max-width: 650px)  {
+.phone {
 	.Header {
 		height: 9em;
 

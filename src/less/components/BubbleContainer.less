@@ -1,6 +1,5 @@
 .BubbleContainer {
 	width: 100%;
-	height: 35.3em;
 	background: linear-gradient(275deg, #FFECD7 9.5%, rgba(255, 236, 215, 0.00) 100.79%);
 	display: flex;
 	justify-content: center;
@@ -15,7 +14,6 @@
 
 		.BubbleContainer__bubbles {
 			position: relative;
-			margin-right: 6.3em;
 
 			.BubbleContainer__bubble__image {
 				height: 55em;
@@ -51,6 +49,49 @@
 				font-weight: 700;
 				max-width: 13.55em;
 				margin-bottom: 1em;
+			}
+		}
+	}
+}
+
+.desktop {
+	.BubbleContainer {
+		height: 35.3em;
+
+		.BubbleContainer__content {
+			.BubbleContainer__bubbles {
+				margin-right: 6.3em;
+			}
+		}
+	}
+}
+
+.phone {
+	.BubbleContainer {
+		.BubbleContainer__content {
+			flex-direction: column;
+			padding: 3.5em 2em;
+
+			.BubbleContainer__bubbles {
+				&:after {
+					z-index: -1;
+				}
+			}
+
+			.BubbleContainer__try {
+				align-items: center;
+			}
+
+			.BubbleContainer__text {
+				font-size: 6em;
+				line-height: 1.3em;
+				margin-bottom: 0.5em;
+			}
+
+			.BubbleContainer__button {
+				font-size: 1.3em;
+				width: 100%;
+				justify-content: center;
 			}
 		}
 	}

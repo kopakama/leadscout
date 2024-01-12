@@ -48,7 +48,8 @@ class PhoneSliderContainer extends BaseContainer {
 				slides-per-view="1"
 				speed="500"
 				loop="true"
-				navigation="true"
+				autoplay="true"
+				autoplay-delay="5000"
 				injectStyles={[`.swiper-button-next, .swiper-button-prev {opacity: 0.5;color: #FE9A52;}`]}
 			>
 				{this.renderSliderItems()}

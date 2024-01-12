@@ -19,7 +19,11 @@ class LandingContainer extends React.Component {
 	}
 
 	renderBlock(elem, maxWidth = false) {
-		return <div className={classNames('Block', {maxWidth})}>{elem}</div>;
+		return (
+			<div className={classNames('Block', {maxWidth})}>
+				<div className="Block__content">{elem}</div>
+			</div>
+		);
 	}
 
 	renderContentChildren() {

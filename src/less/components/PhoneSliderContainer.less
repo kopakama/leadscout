@@ -3,9 +3,8 @@
 	justify-content: center;
 
 	.PhoneSliderContainer__content {
+		width: 100%;
 		.PhoneSliderContainer__swiper {
-			width: 130em;
-
 			.PhoneSliderContainer__swiper_slide {
 				display: flex;
 				justify-content: center;
@@ -13,7 +12,6 @@
 				.PhoneSliderContainer__swiper_slide__phone {
 					width: 36.9em;
 					height: 74.5em;
-					margin-right: 11.2em;
 					.PhoneSliderContainer__swiper_slide__phone_image {
 						background-size: contain;
 						background-repeat: no-repeat;
@@ -37,7 +35,6 @@
 					display: flex;
 					flex-direction: column;
 					justify-content: center;
-					max-width: 65.7em;
 
 					.PhoneSliderContainer__swiper_slide__title {
 						color: var(--gray-1100, #353738);
@@ -53,6 +50,55 @@
 						font-size: 1.8em;
 						font-weight: 500;
 						line-height: 140%;
+					}
+				}
+			}
+		}
+	}
+}
+
+.desktop {
+	.PhoneSliderContainer {
+		.PhoneSliderContainer__content {
+			.PhoneSliderContainer__swiper {
+				width: 130em;
+
+				.PhoneSliderContainer__swiper_slide {
+					.PhoneSliderContainer__swiper_slide__phone {
+						margin-right: 11.2em;
+					}
+
+					.PhoneSliderContainer__swiper_slide__text {
+						max-width: 65.7em;
+					}
+				}
+			}
+		}
+	}
+}
+
+.phone {
+	.PhoneSliderContainer {
+		margin-top: 6em;
+
+		.PhoneSliderContainer__content {
+			.PhoneSliderContainer__swiper {
+				.PhoneSliderContainer__swiper_slide {
+					flex-direction: column;
+					align-items: center;
+
+					.PhoneSliderContainer__swiper_slide__phone {
+						order: 1;
+					}
+
+					.PhoneSliderContainer__swiper_slide__text {
+						margin-top: 2em;
+						margin-bottom: 5em;
+						order: 0;
+
+						.PhoneSliderContainer__swiper_slide__desc {
+							font-size: 2em;
+						}
 					}
 				}
 			}

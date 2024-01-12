@@ -15,8 +15,38 @@
 		justify-content: center;
 
 		&_content {
-			width: 66em;
+			width: 100%;
 			height: 41.5em;
+		}
+	}
+}
+
+.desktop {
+	.PresentationContainer {
+		&__video {
+			&_content {
+				width: 66em;
+			}
+		}
+	}
+}
+
+.phone {
+	.PresentationContainer {
+		width: 100%;
+
+		&__content {
+			width: 100%;
+			padding: 0 2em;
+		}
+
+		&__cards {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		&__video {
+			padding: 0 2em;
 		}
 	}
 }
