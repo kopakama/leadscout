@@ -49,7 +49,7 @@ class PresentationContainer extends BaseContainer {
 			<div className={`${this.getBaseClassName()}__video`}>
 				<iframe
 					className={`${this.getBaseClassName()}__video_content`}
-					src="https://www.youtube.com/embed/J1j4yo9p110?si=i10aEE70Rr63RrQt"
+					src=""
 					title="YouTube video player"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 					allowFullScreen

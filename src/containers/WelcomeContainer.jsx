@@ -4,6 +4,7 @@ import '../less/components/Header.less';
 import WelcomeImage from '../img/welcome.gif';
 import Button from '../components/common/Button';
 import BaseContainer from '../components/common/BaseContainer';
+import {scrollTo} from '../helpers/helper';
 
 class WelcomeContainer extends BaseContainer {
 	static defaultProps = {
@@ -20,8 +21,8 @@ class WelcomeContainer extends BaseContainer {
 				</div>
 				<div className={`${className}__descr`}>{t('welcomeLeftBlockDescr')}</div>
 				<div className={`${className}__buttons`}>
-					<Button className={`${className}__button`} text={t('plan')} icon="download" />
-					<Button className={`${className}__button`} text={t('howItWorks')} variant="outlined" icon="play" />
+					<Button className={`${className}__button`} text={t('plan')} icon="download" onClick={(e) => scrollTo(e, 'SubscriptionsContainer')} />
+					<Button className={`${className}__button`} text={t('howItWorks')} variant="outlined" icon="play" onClick={(e) => scrollTo(e, 'HowItWorksContainer')} />
 				</div>
 			</div>
 		);

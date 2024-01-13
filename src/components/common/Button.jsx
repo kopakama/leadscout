@@ -29,7 +29,7 @@ export function Button({...props}) {
 	}
 
 	return (
-		<button type="button" className={classNames(getBaseClassName(), props.className, props.variant, {useIcon: allowIcon()})}>
+		<button type="button" onClick={props.onClick} className={classNames(getBaseClassName(), props.className, props.variant, {useIcon: allowIcon()})}>
 			{renderContent()}
 		</button>
 	);
@@ -40,12 +40,14 @@ Button.propTypes = {
 	className: PropTypes.string,
 	icon: PropTypes.string,
 	variant: PropTypes.string,
+	onClick: PropTypes.string,
 };
 
 Button.defaultProps = {
 	className: '',
 	icon: '',
 	variant: 'contained',
+	onClick: null,
 };
 
 export default Button;
