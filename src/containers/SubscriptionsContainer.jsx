@@ -9,18 +9,100 @@ class SubscriptionsContainer extends BaseContainer {
 		baseClassName: 'SubscriptionsContainer',
 	};
 
-	getCards() {
-		// const {t} = this.props;
+	constructor(props) {
+		super(props);
+		this.state = {
+			error: null,
+			isLoaded: false,
+			subscriptions: [],
+			currentSwitch: 'switch-radio2',
+		};
 
-		return [
-			<SubscriptionCard title="Title" desc="Description" cost="228₽" costDesc="Per User" bonuses={['Bonus1', 'Bonus2', 'Bonus3', 'Bonus4', 'Bonus5']} />,
-			<SubscriptionCard title="Title" desc="Description" cost="228₽" costDesc="Per User" bonuses={['Bonus1', 'Bonus2', 'Bonus3', 'Bonus4', 'Bonus5']} />,
-			<SubscriptionCard title="Title" desc="Description" cost="228₽" costDesc="Per User" bonuses={['Bonus1', 'Bonus2', 'Bonus3', 'Bonus4', 'Bonus5']} />,
-		];
+		this.onChangeMonth = this.onChangeMonth.bind(this);
+	}
+
+	componentDidMount() {
+		fetch('/dev/v1/subscriptions')
+			.then((res) => res.json())
+			.then(
+				(result) => {
+					this.setState({
+						isLoaded: true,
+						subscriptions: result.subscriptions.filter((subscription) => !!subscription?.price),
+					});
+				},
+				// Note: it's important to handle errors here
+				// instead of a catch() block so that we don't swallow
+				// exceptions from actual bugs in components.
+				(error) => {
+					this.setState({
+						isLoaded: true,
+						error,
+					});
+				},
+			);
+	}
+
+	onChangeMonth(e) {
+		this.setState({currentSwitch: e.target.id});
+	}
+
+	getCardCost(subscription) {
+		const {currentSwitch} = this.state;
+		const {price, price_3m, price_6m} = subscription;
+		if (currentSwitch === 'switch-radio1') {
+			return price;
+		}
+		if (currentSwitch === 'switch-radio2') {
+			return price_3m / 3;
+		}
+
+		return price_6m / 6;
+	}
+
+	getCards() {
+		const {subscriptions} = this.state;
+
+		return subscriptions.map((subscription) => (
+			<SubscriptionCard
+				title={subscription.title}
+				desc={subscription.support_type}
+				cost={this.getCardCost(subscription)}
+				defaultCost={subscription.price}
+				costDesc="В месяц"
+				bonuses={[`${subscription.quantity_exclusion_words} слов-исключений`, `${subscription.quantity_groups} групп`, `${subscription.quantity_keywords} ключевых слов`]}
+			/>
+		));
 	}
 
 	renderCards() {
 		return <div className={`${this.getBaseClassName()}__cards`}>{this.getCards()}</div>;
+	}
+
+	renderSwitchInput(id) {
+		const {currentSwitch} = this.state;
+		return <input type="radio" className="switch-radio" id={id} name="radio" checked={currentSwitch === id} />;
+	}
+
+	renderSwitch() {
+		return (
+			<div className="switch-container">
+				<form className="switch" onChange={this.onChangeMonth}>
+					{this.renderSwitchInput('switch-radio1')}
+					{/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+					<label htmlFor="switch-radio1">Месяц</label>
+
+					{this.renderSwitchInput('switch-radio2')}
+					{/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+					<label htmlFor="switch-radio2">3 месяца</label>
+
+					{this.renderSwitchInput('switch-radio3')}
+					{/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+					<label htmlFor="switch-radio3">Полгода</label>
+					<span id="active-label" />
+				</form>
+			</div>
+		);
 	}
 
 	renderTitle() {
@@ -29,7 +111,18 @@ class SubscriptionsContainer extends BaseContainer {
 	}
 
 	renderContentChildren() {
-		return [this.renderTitle(), this.renderCards()];
+		return [this.renderTitle(), this.renderSwitch(), this.renderCards()];
+	}
+
+	render() {
+		const {error, isLoaded} = this.state;
+		if (error) {
+			return <div>Error: {error.message}</div>;
+		}
+		if (!isLoaded) {
+			return <div>Loading...</div>;
+		}
+		return super.render();
 	}
 }
 

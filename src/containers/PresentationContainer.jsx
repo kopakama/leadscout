@@ -24,7 +24,7 @@ class PresentationContainer extends BaseContainer {
 		const {t} = this.props;
 
 		return [
-			<Card icon="category" title={t('chatCategories')} desc={t('chatCategoriesDesc')} />,
+			// <Card icon="category" title={t('chatCategories')} desc={t('chatCategoriesDesc')} />,
 			<Card icon="support" title={t('247Support')} desc={t('247SupportDesc')} />,
 			<Card icon="lightning" title={t('fastSetup')} desc={t('fastSetupDesc')} />,
 		];
@@ -59,7 +59,8 @@ class PresentationContainer extends BaseContainer {
 	}
 
 	renderContentChildren() {
-		return [this.renderVideo(), this.renderCardsTopGroup(), this.renderCardsBottomGroup()];
+		// return [this.renderVideo(), this.renderCardsTopGroup(), this.renderCardsBottomGroup()];
+		return [this.renderCardsTopGroup()];
 	}
 }
 

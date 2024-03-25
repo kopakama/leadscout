@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {withTranslation} from 'react-i18next';
+import classNames from 'classnames';
 import Button from './common/Button';
 
 function SubscriptionCard({...props}) {
-	const {title, desc, cost, costDesc, bonuses, t} = props;
+	const {title, desc, cost, costDesc, bonuses, defaultCost, t} = props;
 	function getBaseClassName() {
 		return 'SubscriptionCard';
 	}
@@ -15,7 +16,8 @@ function SubscriptionCard({...props}) {
 				<div className={`${getBaseClassName()}__title`}>{title}</div>
 				<div className={`${getBaseClassName()}__desc`}>{desc}</div>
 				<div className={`${getBaseClassName()}__cost`}>
-					<div className={`${getBaseClassName()}__cost_price`}>{cost}</div>
+					{defaultCost !== cost ? <div className={classNames(`${getBaseClassName()}__cost_price`, 'default')}>{defaultCost}</div> : null}
+					<div className={`${getBaseClassName()}__cost_price`}>{cost}₽</div>
 					<div className={`${getBaseClassName()}__cost_desc`}>{costDesc}</div>
 				</div>
 			</div>
@@ -36,6 +38,7 @@ SubscriptionCard.propTypes = {
 	title: PropTypes.string.isRequired,
 	desc: PropTypes.string.isRequired,
 	cost: PropTypes.string.isRequired,
+	defaultCost: PropTypes.string.isRequired,
 	costDesc: PropTypes.string.isRequired,
 	bonuses: PropTypes.array.isRequired,
 	t: PropTypes.func.isRequired,

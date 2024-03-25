@@ -154,5 +154,6 @@
     "presets": [
       "@babel/preset-react"
     ]
-  }
+  },
+  "proxy": "https://leadscout.ru"
 }
