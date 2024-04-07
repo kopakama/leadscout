@@ -23,16 +23,10 @@ class ContactBubbleContainer extends BaseContainer {
 			<div className={`${this.getBaseClassName()}__contact_block`}>
 				<div className={`${this.getBaseClassName()}__text`}>{t('contactUs')}</div>
 				<div className={`${this.getBaseClassName()}__contacts`}>
-					<div className={classNames(`${this.getBaseClassName()}__contact`, 'email')}>
-						<div className={`${this.getBaseClassName()}__contact_title`}>Напишите на почту</div>
-						<div className={`${this.getBaseClassName()}__contact_desc`}>
-							Напишите нам по эл. адресу <a href="mailto: abc@example.com">abc@example.com</a>
-						</div>
-					</div>
 					<div className={classNames(`${this.getBaseClassName()}__contact`, 'telegram')}>
 						<div className={`${this.getBaseClassName()}__contact_title`}>Напишите в телеграм</div>
 						<div className={`${this.getBaseClassName()}__contact_desc`}>
-							Напишите нам в телеграм по адресу <a href="https://www.google.com/">telega.link</a>
+							Напишите нам в телеграм по адресу <a href="https://t.me/leadscout_support">@leadscout_support</a>
 						</div>
 					</div>
 				</div>

@@ -1,3 +1,11 @@
+.SubscriptionsContainer {
+	&__test_cards {
+		.SubscriptionCard {
+			box-shadow: 0 41px 74px 0 #FFECD6, 0 4px 15px 0 rgba(255, 230, 200, 0.66);
+		}
+	}
+}
+
 .SubscriptionCard {
 	border-radius: 1em;
 	padding: 2em;
@@ -31,15 +39,16 @@
 		width: 100%;
 		display: flex;
 		align-items: flex-end;
+		justify-content: flex-start;
 		margin-top: 1.2em;
 
 		&_price {
-			font-weight: 700;
 			font-size: 2.5em;
 			margin-right: 0.35em;
 			line-height: normal;
 
 			&.default {
+				font-weight: 700;
 				text-decoration: line-through;
 			}
 		}

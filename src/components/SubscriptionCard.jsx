@@ -16,8 +16,11 @@ function SubscriptionCard({...props}) {
 				<div className={`${getBaseClassName()}__title`}>{title}</div>
 				<div className={`${getBaseClassName()}__desc`}>{desc}</div>
 				<div className={`${getBaseClassName()}__cost`}>
-					{defaultCost !== cost ? <div className={classNames(`${getBaseClassName()}__cost_price`, 'default')}>{defaultCost}</div> : null}
-					<div className={`${getBaseClassName()}__cost_price`}>{cost}₽</div>
+					{defaultCost && defaultCost !== cost ? <div className={classNames(`${getBaseClassName()}__cost_price`, 'default')}>{defaultCost}</div> : null}
+					<div className={`${getBaseClassName()}__cost_price`}>
+						{cost}
+						{typeof cost === 'number' ? '₽' : null}
+					</div>
 					<div className={`${getBaseClassName()}__cost_desc`}>{costDesc}</div>
 				</div>
 			</div>

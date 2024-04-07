@@ -25,14 +25,14 @@ class FaqContainer extends BaseContainer {
 				question: t('faqQuestion3'),
 				answer: t('faqAnswer3'),
 			},
-			{
-				question: t('faqQuestion4'),
-				answer: t('faqAnswer4'),
-			},
-			{
-				question: t('faqQuestion5'),
-				answer: t('faqAnswer5'),
-			},
+			// {
+			// 	question: t('faqQuestion4'),
+			// 	answer: t('faqAnswer4'),
+			// },
+			// {
+			// 	question: t('faqQuestion5'),
+			// 	answer: t('faqAnswer5'),
+			// },
 		];
 	}
 
